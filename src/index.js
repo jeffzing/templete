@@ -3,6 +3,10 @@ import moment from 'moment';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MyRangePicker from './MyRangePicker'
+
+import continueCreate from './skills/continueCreate';
+import chainFunc from './skills/chainFuncs';
+
 // import styles from './main.module.less'
 import 'antd/dist/antd.css';
 import './index.css'
@@ -26,47 +30,15 @@ root.className = 'root'
 ReactDOM.render(<button className='btn'>创建100000个数字</button>, root);
 
 const btn = document.querySelector('.btn')
-const datas = new Array(100).fill(0).map((_, i) => i)
 console.log(btn)
 
 
 btn.onclick = function () {
-    function consumer(i) {
-        const item = datas[i]
-        const div = document.createElement('div')
-        div.textContent = item
-        div.textContent = item
-        console.log('item', item)
-        document.body.appendChild(div)
-    }
-    function chunksplitor(task) {
-        setTimeout(() => {
-            task((time) => time < 16)
-        }, 30)
-    }
-    splitCall(datas, consumer, chunksplitor)
-}
-
-function splitCall(datas, consumer, chunksplitor) {
-
-    let i = 0
-
-    function run() {
-        if (i === datas.length) {
-            return
-        }
-        chunksplitor((hastime) => {
-            const now = Date.now()
-            while (hastime(Date.now() - now) && i < datas.length) {
-                console.log('now', now)
-
-                consumer(i)
-                i++
-            }
-            run()
-        })
-    }
-    run()
+    chainFunc(() => { console.log('初始化') })
+        .break(5)
+        .dofirst(() => { console.log('我先来哦') })
+        .continue(() => { console.log('第二🙅步') })
+        .execute();
 }
 
 // Center the triangle div element in the root
