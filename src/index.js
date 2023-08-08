@@ -6,6 +6,7 @@ import MyRangePicker from './MyRangePicker'
 
 import continueCreate from './skills/continueCreate';
 import chainFunc from './skills/chainFuncs';
+import TestView from './skills/TestView'
 
 // import styles from './main.module.less'
 import 'antd/dist/antd.css';
@@ -27,19 +28,20 @@ root.className = 'root'
 // However, in order to use LESS files in a React project, a LESS loader must be configured in the project's webpack configuration. 
 // If the LESS loader is not properly configured, the imported styles will be undefined. 
 // Therefore, it is likely that the LESS loader is not properly configured in this project, causing the styles variable to be undefined.
-ReactDOM.render(<button className='btn'>创建100000个数字</button>, root);
+ReactDOM.render(<TestView className='btn'></TestView>, root);
 
-const btn = document.querySelector('.btn')
+// const btn = document.querySelector('.btn')
 console.log(btn)
 
 
-btn.onclick = function () {
-    chainFunc(() => { console.log('初始化') })
-        .break(5)
-        .dofirst(() => { console.log('我先来哦') })
-        .continue(() => { console.log('第二🙅步') })
-        .execute();
-}
+// btn.onclick = function () {
+//     chainFunc(() => { console.log('初始化') })
+//         .break(5)
+//         .breakFirst(5)
+//         // .dofirst(() => { console.log('我先来哦') })
+//         .continue(() => { console.log('第二🙅步') })
+//         .execute();
+// }
 
 // Center the triangle div element in the root
 // window.onload = function() {
