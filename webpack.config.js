@@ -35,10 +35,17 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: false
+              modules: true
             }
           },
-          'less-loader'
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true
+              }
+            }
+          }
         ]
       },
 

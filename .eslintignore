@@ -1,0 +1,27 @@
+# 忽略不必要检查的文件
+*.sh
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+.husky
+.local
+.nyc_output
+/mock/*
+/dist/*
+/static
+/public
+/docs
+/node_modules
+/bin
+/test
+/unittest
+/**/build
+/**/dist
+/**/static
+.eslintrc.js
+.prettierrc.js
+ 
+ 
+ 
