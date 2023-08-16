@@ -1,7 +1,0 @@
-# 忽略不需要的检查的代码
-/node_modules
-/test
-/unittest
-/**/build
-/**/dist
-/**/static
